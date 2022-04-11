@@ -23,11 +23,11 @@
                 <div class="item same-height-row clearfix">
                     <div class="image same-height-always">
                         <a href="{{ .Permalink }}">
-                          {{ if isset .Params "banner" }}
+                            {{ if isset .Params "banner" }}
                             <img src="{{ .Params.banner | relURL }}" class="img-responsive" alt="{{ .Title }}">
-                          {{ else }}
-                            <img src="{{ "img/placeholder.png" | relURL }}" class="img-responsive" alt="{{ .Title }}">
-                          {{ end }}
+                            {{ else }}
+                            <img src="{{ " img/placeholder.png" | relURL }}" class="img-responsive" alt="{{ .Title }}">
+                            {{ end }}
                         </a>
                     </div>
                     <div class="name same-height-always">
@@ -46,11 +46,12 @@
         {{ if isset .Site.Params "address" }}
         <div class="col-md-4 col-sm-6">
 
-          <h4>{{ i18n "contactTitle" }}</h4>
+            <h4>{{ i18n "contactTitle" }}</h4>
 
             {{ .Site.Params.address | safeHTML }}
 
-            <a href="{{ default "/contact" .Site.Params.contact_url }}" class="btn btn-small btn-template-main">{{ i18n "contactGoTo" }}</a>
+            <a href="{{ default " /contact" .Site.Params.contact_url }}" class="btn btn-small btn-template-main">{{ i18n
+                "contactGoTo" }}</a>
 
             <hr class="hidden-md hidden-lg hidden-sm">
 
@@ -76,10 +77,12 @@ _________________________________________________________ -->
             <p class="pull-left">{{ .Site.Params.copyright | safeHTML }}</p>
             {{ end }}
             <p class="pull-right">
-              {{ i18n "templateBy" | markdownify }} <a href="https://bootstrapious.com/p/universal-business-e-commerce-template">Bootstrapious</a>.
-              <!-- Not removing this link is part of the licence conditions of the template. Thanks for understanding :) -->
+                {{ i18n "templateBy" | markdownify }} <a
+                    href="https://bootstrapious.com/p/universal-business-e-commerce-template">Bootstrapious</a>.
+                <!-- Not removing this link is part of the licence conditions of the template. Thanks for understanding :) -->
 
-              {{ i18n "portedBy" | markdownify }} <a href="https://github.com/devcows/hugo-universal-theme">DevCows</a>.
+                {{ i18n "portedBy" | markdownify }} <a
+                    href="https://github.com/devcows/hugo-universal-theme">DevCows</a>.
             </p>
         </div>
     </div>
@@ -87,3 +90,6 @@ _________________________________________________________ -->
 <!-- /#copyright -->
 
 <!-- *** COPYRIGHT END *** -->
+
+<!-- Cookie consent -->
+{{ partial "consent_popup.html" }}

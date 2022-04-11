@@ -98,3 +98,7 @@
 {{ end }}
 <meta name="twitter:description" content="{{ $description_plain | truncate 200 }}">
 {{ with .Param "twitter_author" }}<meta name="twitter:creator" content="@{{ . }}">{{ end }}
+
+<!-- Cookie Consent -->
+<link href="{{ "css/cookie_consent.css" | relURL }}?{{ now.Unix }}" rel="stylesheet">
+{{ partial "consent_script.html" }}

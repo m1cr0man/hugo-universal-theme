@@ -1,0 +1,27 @@
+<script type="text/javascript">
+    var doNotTrack = localStorage.getItem("doNotTrack");
+
+    var askForConsent = doNotTrack === null;
+
+    if (askForConsent) {
+        // Default value is false before any choice has been made
+        doNotTrack = "0";
+    }
+
+    function consentToCookies() {
+        localStorage.setItem("doNotTrack", "0");
+        window.location.reload();
+    }
+
+    function revokeCookies() {
+        localStorage.setItem("doNotTrack", "1");
+        window.location.reload();
+    }
+
+    document.onload(function () {
+        if (askForConsent) {
+            document.getElementById("cookie_consent").classList.remove("visible");
+        }
+    });
+
+</script>
